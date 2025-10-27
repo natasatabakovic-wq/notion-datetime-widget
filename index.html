@@ -14,23 +14,23 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
             background: transparent;
-            padding: 12px;
+            padding: 2%;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 80px;
+            min-height: 100vh;
         }
         
         .widget-container {
             width: 100%;
-            max-width: 320px;
+            max-width: 100%;
             background: rgb(247, 246, 243);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-radius: clamp(12px, 3vw, 20px);
+            padding: clamp(20px, 5vw, 32px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(55, 53, 47, 0.08);
         }
         
         .widget-container::before {
@@ -40,13 +40,13 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-            animation: pulse 8s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 70%);
+            animation: pulse 10s ease-in-out infinite;
         }
         
         @keyframes pulse {
-            0%, 100% { transform: translate(0, 0); opacity: 0.5; }
-            50% { transform: translate(-10%, -10%); opacity: 0.8; }
+            0%, 100% { transform: translate(0, 0); opacity: 0.4; }
+            50% { transform: translate(-10%, -10%); opacity: 0.7; }
         }
         
         .content-wrapper {
@@ -55,124 +55,88 @@
         }
         
         .greeting {
-            font-size: clamp(11px, 2.5vw, 13px);
+            font-size: clamp(13px, 3vw, 16px);
             font-weight: 500;
-            color: rgba(55, 53, 47, 0.65);
-            margin-bottom: clamp(6px, 1.5vw, 8px);
-            letter-spacing: 0.3px;
+            color: rgba(55, 53, 47, 0.6);
+            margin-bottom: clamp(8px, 2vw, 12px);
+            letter-spacing: 0.5px;
+            text-align: center;
         }
         
         .time-section {
             text-align: center;
-            margin-bottom: clamp(10px, 2.5vw, 12px);
+            margin-bottom: clamp(16px, 4vw, 24px);
         }
         
         .time {
-            font-size: clamp(32px, 8vw, 40px);
+            font-size: clamp(48px, 12vw, 72px);
             font-weight: 700;
             color: rgb(55, 53, 47);
             font-variant-numeric: tabular-nums;
             line-height: 1;
-            letter-spacing: -1px;
+            letter-spacing: -2px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
         }
         
         .period {
-            font-size: clamp(14px, 3.5vw, 16px);
+            font-size: clamp(18px, 4.5vw, 24px);
             font-weight: 600;
-            color: rgba(55, 53, 47, 0.65);
-            margin-left: clamp(4px, 1vw, 6px);
+            color: rgba(55, 53, 47, 0.5);
+            margin-left: clamp(6px, 1.5vw, 10px);
         }
         
         .date-section {
             text-align: center;
-            margin-bottom: clamp(10px, 2.5vw, 12px);
+            padding: clamp(16px, 4vw, 24px) clamp(20px, 5vw, 32px);
+            background: rgba(55, 53, 47, 0.03);
+            border-radius: clamp(12px, 2.5vw, 16px);
+            border: 1px solid rgba(55, 53, 47, 0.06);
         }
         
         .weekday {
-            font-size: clamp(10px, 2.2vw, 12px);
-            font-weight: 500;
-            color: rgba(55, 53, 47, 0.45);
-            letter-spacing: 0.5px;
-            margin-bottom: 2px;
+            font-size: clamp(11px, 2.5vw, 13px);
+            font-weight: 600;
+            color: rgba(55, 53, 47, 0.5);
+            letter-spacing: 1.5px;
+            margin-bottom: clamp(6px, 1.5vw, 8px);
             text-transform: uppercase;
         }
         
         .date {
-            font-size: clamp(14px, 3.5vw, 16px);
+            font-size: clamp(18px, 4.5vw, 22px);
             font-weight: 600;
             color: rgb(55, 53, 47);
             line-height: 1.3;
         }
         
-        .badges {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(4px, 1vw, 6px);
-            margin-bottom: clamp(10px, 2.5vw, 12px);
-        }
-        
-        .badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(55, 53, 47, 0.06);
-            color: rgb(55, 53, 47);
-            padding: clamp(5px, 1.2vw, 6px) clamp(10px, 2.5vw, 12px);
-            border-radius: clamp(6px, 1.5vw, 8px);
-            font-size: clamp(10px, 2.2vw, 12px);
-            font-weight: 600;
-            border: 1px solid rgba(55, 53, 47, 0.09);
-            transition: all 0.3s ease;
-        }
-        
-        .badge:hover {
-            background: rgba(55, 53, 47, 0.09);
-        }
-        
-        .badge-icon {
-            margin-right: clamp(3px, 0.8vw, 4px);
-            font-size: clamp(11px, 2.5vw, 13px);
-        }
-        
-        .status-message {
-            font-size: clamp(9px, 2vw, 11px);
-            font-weight: 500;
-            color: rgba(55, 53, 47, 0.65);
-            text-align: center;
-            padding-top: clamp(8px, 2vw, 10px);
-            border-top: 1px solid rgba(55, 53, 47, 0.09);
-            font-style: italic;
-            line-height: 1.4;
-        }
-        
         .fade-in {
-            animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.6s ease-in;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
+            from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Responsive breakpoints for better control */
+        /* Responsive breakpoints */
         @media (max-width: 250px) {
             .time {
-                font-size: 28px;
+                font-size: 36px;
             }
-            .greeting, .status-message {
-                font-size: 9px;
+            .greeting {
+                font-size: 11px;
             }
         }
         
         @media (min-width: 500px) {
             .time {
-                font-size: 40px;
+                font-size: 72px;
             }
             .greeting {
-                font-size: 13px;
+                font-size: 16px;
             }
-            .status-message {
-                font-size: 11px;
+            .date {
+                font-size: 22px;
             }
         }
     </style>
@@ -190,58 +154,16 @@
                 <div class="weekday" id="weekday"></div>
                 <div class="date" id="date"></div>
             </div>
-            
-            <div class="badges">
-                <div class="badge">
-                    <span class="badge-icon">📅</span>
-                    <span id="weekBadge"></span>
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">🎓</span>
-                    <span id="semesterBadge"></span>
-                </div>
-            </div>
-            
-            <div class="status-message" id="statusMessage"></div>
         </div>
     </div>
 
     <script>
-        const CONFIG = {
-            semesterStart: new Date('2024-08-26'),
-            semesterEnd: new Date('2024-12-20'),
-            semesterName: 'Fall 2024',
-            periodName: 'Semester' // Can be 'Semester', 'Quarter', 'Term', 'Year', etc.
-        };
-
         function getGreeting(hour) {
             if (hour < 5) return 'Good night';
             if (hour < 12) return 'Good morning';
             if (hour < 17) return 'Good afternoon';
             if (hour < 21) return 'Good evening';
             return 'Good night';
-        }
-
-        function getStatusMessage(now) {
-            const weekNum = Math.floor((now - CONFIG.semesterStart) / (1000 * 60 * 60 * 24 * 7)) + 1;
-            const totalWeeks = Math.ceil((CONFIG.semesterEnd - CONFIG.semesterStart) / (1000 * 60 * 60 * 24 * 7));
-            
-            if (now > CONFIG.semesterEnd) {
-                return `🎉 ${CONFIG.periodName} complete!`;
-            }
-            
-            const weeksLeft = totalWeeks - weekNum + 1;
-            
-            if (weeksLeft <= 1) {
-                return '🏁 Final week!';
-            } else if (weeksLeft <= 3) {
-                return `⚡ ${weeksLeft} weeks left`;
-            } else if (weekNum === 1) {
-                return '🚀 Fresh start!';
-            } else {
-                const progress = Math.round((weekNum / totalWeeks) * 100);
-                return `📊 ${progress}% complete`;
-            }
         }
 
         function updateWidget() {
@@ -257,7 +179,7 @@
             
             // Date
             const date = now.toLocaleDateString('en-US', { 
-                month: 'short', 
+                month: 'long', 
                 day: 'numeric',
                 year: 'numeric'
             });
@@ -271,14 +193,6 @@
             
             document.getElementById('time').textContent = `${displayHours}:${displayMinutes}`;
             document.getElementById('period').textContent = period;
-            
-            // Week calculation
-            const weekNum = Math.floor((now - CONFIG.semesterStart) / (1000 * 60 * 60 * 24 * 7)) + 1;
-            document.getElementById('weekBadge').textContent = `Week ${weekNum}`;
-            document.getElementById('semesterBadge').textContent = CONFIG.semesterName;
-            
-            // Status message
-            document.getElementById('statusMessage').textContent = getStatusMessage(now);
         }
 
         // Initial update
