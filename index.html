@@ -101,9 +101,6 @@
         }
         
         .date-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: clamp(8px, 2vw, 12px);
         }
         
@@ -119,6 +116,7 @@
             font-size: clamp(13px, 3vw, 15px);
             font-weight: 600;
             color: #1f2937;
+            text-align: center;
         }
         
         .date {
@@ -183,8 +181,8 @@
             
             <div class="date-section">
                 <div class="date-row">
-                    <span class="date-label">Day</span>
-                    <span class="weekday" id="weekday"></span>
+                    <div class="date-label">Day</div>
+                    <div class="weekday" id="weekday"></div>
                 </div>
                 <div class="date" id="date"></div>
             </div>
